@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { HttpService } from '@nestjs/axios';
+import { HttpService } from '@nestjs/axios'; // Importar HttpService de @nestjs/axios
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { Character } from './character.interface';
