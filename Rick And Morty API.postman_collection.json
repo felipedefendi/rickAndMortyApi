@@ -1,0 +1,258 @@
+{
+	"info": {
+		"_postman_id": "6a21dd98-8842-43f2-8db4-0473c0770709",
+		"name": "Rick And Morty API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16116738"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"testuser4\",\r\n  \"password\": \"testpassword\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"testuser4\",\r\n  \"password\": \"testpassword\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Acesso a Rota Protegida",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MTkwOTU1ODAsImV4cCI6MTcxOTA5NTY0MH0.K8dc1QZ7TXMtuGnU7Ct1jHGe9TQMOi6172aqLNCca3k",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/auth/profile",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Character",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MTkwOTc5MDAsImV4cCI6MTcxOTE4NDMwMH0.VYzcz4TnjoTNfWRb0adOU8fbD4t97DcAJSVyhQdaHls",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 1,\r\n  \"name\": \"Rick Sanchez\",\r\n  \"status\": \"Alive\",\r\n  \"species\": \"Human\",\r\n  \"type\": \"Sei lá\",\r\n  \"gender\": \"Male\",\r\n  \"origin\": {\r\n    \"name\": \"Earth (C-137)\",\r\n    \"url\": \"https://rickandmortyapi.com/api/location/1\"\r\n  },\r\n  \"location\": {\r\n    \"name\": \"Earth (Replacement Dimension)\",\r\n    \"url\": \"https://rickandmortyapi.com/api/location/20\"\r\n  },\r\n  \"image\": \"https://rickandmortyapi.com/api/character/avatar/1.jpeg\",\r\n  \"episode\": [\r\n    \"https://rickandmortyapi.com/api/episode/1\",\r\n    \"https://rickandmortyapi.com/api/episode/2\"\r\n  ],\r\n  \"url\": \"https://rickandmortyapi.com/api/character/1\",\r\n  \"created\": \"2017-11-04T18:48:46.250Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/rick-and-morty/character",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"rick-and-morty",
+						"character"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Read Character",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MTkwOTc5MDAsImV4cCI6MTcxOTE4NDMwMH0.VYzcz4TnjoTNfWRb0adOU8fbD4t97DcAJSVyhQdaHls",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/rick-and-morty/character/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"rick-and-morty",
+						"character",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Character",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MTkwOTc5MDAsImV4cCI6MTcxOTE4NDMwMH0.VYzcz4TnjoTNfWRb0adOU8fbD4t97DcAJSVyhQdaHls",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Rick Sanchez\",\r\n  \"status\": \"Alive\",\r\n  \"species\": \"Human\",\r\n  \"type\": \"aaa\",\r\n  \"gender\": \"Male\",\r\n  \"origin\": {\r\n    \"name\": \"Earth (C-137)\",\r\n    \"url\": \"https://rickandmortyapi.com/api/location/1\"\r\n  },\r\n  \"location\": {\r\n    \"name\": \"Earth (Replacement Dimension)\",\r\n    \"url\": \"https://rickandmortyapi.com/api/location/20\"\r\n  },\r\n  \"image\": \"https://rickandmortyapi.com/api/character/avatar/1.jpeg\",\r\n  \"episode\": [\r\n    \"https://rickandmortyapi.com/api/episode/1\",\r\n    \"https://rickandmortyapi.com/api/episode/2\"\r\n  ],\r\n  \"url\": \"https://rickandmortyapi.com/api/character/1\",\r\n  \"created\": \"2017-11-04T18:48:46.250Z\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/rick-and-morty/character/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"rick-and-morty",
+						"character",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Character",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MTkwOTc5MDAsImV4cCI6MTcxOTE4NDMwMH0.VYzcz4TnjoTNfWRb0adOU8fbD4t97DcAJSVyhQdaHls",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/rick-and-morty/character/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"rick-and-morty",
+						"character",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Read Logs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/logs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"logs"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
