@@ -1,10 +1,10 @@
 import { Schema, Prop, SchemaFactory } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
 
-@Schema({ _id: false }) // Desabilitar a geração automática de ObjectId
+@Schema()
 export class Character extends Document {
-  @Prop({ required: true })
-  id: number; // Use 'id' em vez de '_id' para IDs numéricos
+  @Prop({ required: true, unique: true })
+  id: number;
 
   @Prop()
   name: string;
@@ -47,3 +47,4 @@ export class Character extends Document {
 }
 
 export const CharacterSchema = SchemaFactory.createForClass(Character);
+CharacterSchema.index({ id: 1 }, { unique: true });
